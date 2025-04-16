@@ -25,7 +25,7 @@ public class SudokuSolver {
                         if (isSafe(board, row, col, num)) {
                             board[row][col] = num;
                             if (solveSudoku(board)) {
-                                return true;
+                              return true;
                             }
                             board[row][col] = 0;
                         }
