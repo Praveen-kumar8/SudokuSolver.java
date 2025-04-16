@@ -1,6 +1,7 @@
 # SudokuSolver.java
 # Sudoku Solver for 9x9 matrix Format
 
+
 public class SudokuSolver {
     public static void main(String[] args) {
         int[][] board = {
@@ -14,7 +15,6 @@ public class SudokuSolver {
             {0, 0, 0, 4, 1, 9, 0, 0, 5},
             {0, 0, 0, 0, 8, 0, 0, 7, 9}
         };
-
         if (solveSudoku(board)) {
             printBoard(board);
         } else {
@@ -28,11 +28,9 @@ public class SudokuSolver {
                     for (int num = 1; num <= 9; num++) {
                         if (isSafe(board, row, col, num)) {
                             board[row][col] = num;
-
                             if (solveSudoku(board)) {
                                 return true;
                             }
-
                             board[row][col] = 0;
                         }
                     }
@@ -50,7 +48,6 @@ public class SudokuSolver {
         }
         int startRow = row - row % 3;
         int startCol = col - col % 3;
-
         for (int i = startRow; i < startRow + 3; i++) {
             for (int j = startCol; j < startCol + 3; j++) {
                 if (board[i][j] == num) {
@@ -58,7 +55,6 @@ public class SudokuSolver {
                 }
             }
         }
-
         return true;
     }
     public static void printBoard(int[][] board) {
